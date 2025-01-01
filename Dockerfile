@@ -1,4 +1,4 @@
-FROM eclipse-temurin:11-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 
 LABEL maintainer="https://github.com/ben-gineer" \
       description="Clipsal C-Gate server" \
