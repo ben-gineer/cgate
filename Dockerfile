@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:11-jre
 
 LABEL maintainer="https://github.com/ben-gineer" \
       description="Clipsal C-Gate server" \
@@ -12,6 +12,8 @@ WORKDIR /usr/local/bin
 COPY src/ .
 
 RUN set -ex && \
+    apt-get update && \
+    apt-get install -y unzip && \
     unzip cgate-*.zip -d . && \
     rm cgate-*.zip && \
 #    sed -i '/^jdk.tls.disabledAlgorithms=/s/TLSv1, TLSv1.1, //g' /usr/lib/jvm/java-8-openjdk/jre/lib/security/java.security && \
